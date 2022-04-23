@@ -1,6 +1,6 @@
 // @ts-check
 
-import {Request, Response} from 'express'
+// import {Request, Response} from 'express'
 /**
  * @typedef {Object} PrefData - prefectureのデータ
  * @property {number} prefCode - 県名コード
@@ -17,8 +17,8 @@ import {Request, Response} from 'express'
 /**
  * Responds to any HTTP request.
  *
- * @param {Request} req HTTP request context.
- * @param {Response} res HTTP response context.
+ * @param {!express.Request} req HTTP request context.
+ * @param {!express.Response} res HTTP response context.
  */
 exports.helloWorld = (req, res) => {
 
