@@ -35,12 +35,14 @@ exports.helloWorld = (req, res) => {
     const api_url = "https://opendata.resas-portal.go.jp/api/v1/prefectures"
     const response = await fetch(api_url, options);
 
-    if (response.status != 200) {
-    console.error('fetch failed');
-    return;
-    }
     json = await response.json();
 
+    if (response.status != 200) {
+      console.error('fetch failed');
+      res.status(400).json(json);
+      return;
+    }
+    res.status(200).json(json);
   }());
   res.status(200).json(json);
 };
