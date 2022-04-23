@@ -1,0 +1,46 @@
+// @ts-check
+
+import {Request, Response} from 'express'
+/**
+ * @typedef {Object} PrefData - prefectureのデータ
+ * @property {number} prefCode - 県名コード
+ * @property {string} prefName - 県名
+ */
+
+
+/**
+* @typedef {Object} PrefectureJson - Prefectureのjson
+ * @property {string} message - SpecialTypeの文字列プロパティ
+ * @property {{prefCode: number; prefName: string;}[]} result - 県データ
+ */
+
+/**
+ * Responds to any HTTP request.
+ *
+ * @param {Request} req HTTP request context.
+ * @param {Response} res HTTP response context.
+ */
+exports.helloWorld = (req, res) => {
+
+  /** @type {PrefectureJson} */
+  let json;
+
+  (async function() {
+    const options = {
+      method: 'GET',
+      headers: { 
+        'X-API-KEY': process.env.PREFECUTRE_API_KEY
+      },
+    }
+    const api_url = "https://opendata.resas-portal.go.jp/api/v1/prefectures"
+    const response = await fetch(api_url, options);
+
+    if (response.status != 200) {
+    console.error('fetch failed');
+    return;
+    }
+    json = await response.json();
+
+  }());
+  res.status(200).json(json);
+};
