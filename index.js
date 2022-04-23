@@ -44,5 +44,4 @@ exports.helloWorld = (req, res) => {
     }
     res.status(200).json(json);
   }());
-  res.status(200).json(json);
 };
