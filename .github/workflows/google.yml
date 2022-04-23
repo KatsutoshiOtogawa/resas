@@ -39,6 +39,10 @@ jobs:
       with:
         name: 'resas_prefectures'
         runtime: 'nodejs16'
+        region: asia-northeast2
+        description: google function for front end api
+        # entry_point: index.js
+        ingress_settings: ALLOW_ALL
 
     # Example of using the output
     - id: 'test'
