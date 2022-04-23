@@ -1,0 +1,17 @@
+# Top-most EditorConfig file
+root = true
+
+[*]
+charset = utf-8
+# indent_size intentionally not specified in this section
+indent_style = space
+insert_final_newline = true
+end_of_line = lf
+
+# Source code
+[*.{js,mjs,sh}]
+indent_size = 2
+
+# Markdown
+[*.md]
+indent_size = 2
