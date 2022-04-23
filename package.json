@@ -4,6 +4,7 @@
   "engines": {
     "node": "16.x"
   },
+  "type": "module",
   "devDependencies": {
     "@types/node": "^17.0.25",
     "@types/express": "^4.17.13"
