@@ -29,7 +29,7 @@ exports.helloWorld = (req, res) => {
     const options = {
       method: 'GET',
       headers: { 
-        'X-API-KEY': process.env.PREFECUTRE_API_KEY
+        'X-API-KEY': process.env.PREFECTURE_API_KEY
       },
     }
     const api_url = "https://opendata.resas-portal.go.jp/api/v1/prefectures"
