@@ -38,6 +38,7 @@ jobs:
       uses: 'google-github-actions/deploy-cloud-functions@v0'
       with:
         name: 'resas_prefectures'
+        entry_point: 'helloWorld'
         runtime: 'nodejs16'
         region: asia-northeast2
         description: google function for front end api
